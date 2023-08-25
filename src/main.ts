@@ -1,24 +1,39 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import viteLogo from "../public/vite.svg"
+import navBar from './html/nav-all.html?raw'
+import footer from './html/footer-all.html?raw'
+import homeMain from './html/home-main.html?raw'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+function HtmlDomConstruct(path: String) {
+  // header content
+  var navbar = navBar.replace("${viteLogo}", viteLogo)
+  var headerDOMEL = [ navbar ]
+  
+  // main content
+  var mainDOMEL = []
+  if (path == "/") { 
+    mainDOMEL.push(homeMain) 
+  } else if (path == "/about") {
+    mainDOMEL.push(navBar)
+  }
+  
+  // footer content
+  var footerDOMEL = []
+  footerDOMEL.push(footer)
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+  return {
+    header: headerDOMEL.join(''),
+    main: mainDOMEL.join(''),
+    footer: footerDOMEL.join('')
+  }
+}
+
+console.log(HtmlDomConstruct('/help'))
+console.log(location.pathname)
+
+document.addEventListener("DOMContentLoaded", () => {
+  var htmlObject = HtmlDomConstruct(location.pathname)
+  document.querySelector<HTMLDivElement>('header')!.innerHTML = htmlObject.header
+  document.querySelector<HTMLDivElement>('main')!.innerHTML = htmlObject.main
+  document.querySelector<HTMLDivElement>('footer')!.innerHTML = htmlObject.footer
+})
