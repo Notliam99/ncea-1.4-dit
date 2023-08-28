@@ -4,20 +4,90 @@
   box-sizing: border-box;
 }
 
-nav ul {
+/* DEFAULT PREFS */
+:root {
+  /* LIGHT-MODE COLORS */
+  --color-main-1: #D8DEE9;
+  --color-main-2: #E5E9F0;
+  --color-main-3: #ECEFF4;
+
+  /* DARK-MODE COLORS */
+  --color-dark-main-1: #2E3440;
+  --color-dark-main-2: #434C5E;
+  --color-dark-main-3: #4C566A;
+  
+
+  /* ACCENT COLORS */
+  --accent-color-1: #8FBCBB;
+  --accent-color-2: #88C0D0;
+  --accent-color-3: #81A1C1;
+  --accent-color-4: #5E81AC;
+  
+  /* SET GENREAL COLORS */
+  --background-color: var(--color-main-2);
+  --contrasting-color: var(--color-main-1);
+  --text-color: var(--color-dark-main-2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    --background-color: var(--color-dark-main-1);
+    --text-color: var(--accent-);
+  }
+}
+
+/* SETTING GENREAL COLORS */
+:root {
+  background-color: var(--background-color);
+  color: var(--text-color)
+}
+
+/* NAVBAR AND COPONETS */
+#navBar {
+  height: 10vh;
+  border: 1px black solid;
+  color: var(--background-color);
+  transition: all;
+}
+
+#navBar ul {
   display: flex;
   flex-direction: row;
   align-items: center;
   list-style: none;
 }
 
-nav li {
+#navBar li {
   text-align: center;
   flex-grow: 1;
 }
 
-nav li#icon {
+#navBar li#icon {
   flex-grow: 4;
   text-align: left;
   margin: 0.5rem;
 }
+
+.navbar-stick {
+  background-color: var(--contrasting-color);
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/* HERO-BANNER */
+#heroBanner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+/* HOME PAGE 
+* INTRO */
+#introduction {
+  padding: 1vw 10vw 1vw 10vw;
+  height:120vh;
+}
+
