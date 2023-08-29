@@ -1,5 +1,5 @@
 import './style.css'
-import viteLogo from "./typescript.svg"
+import meLogo from "./me.png"
 import navBar from './html/nav-all.html?raw'
 import footer from './html/footer-all.html?raw'
 import homeMain from './html/home-main.html?raw'
@@ -7,7 +7,7 @@ import heroBanner from './html/hero-banner.html?raw'
 
 function HtmlDomConstruct(path: String) {
   // header content
-  var navbar = navBar.replace("${viteLogo}", viteLogo)
+  var navbar = navBar.replace("${meLogo}", meLogo)
   var headerDOMEL = [navbar]
 
   // main content

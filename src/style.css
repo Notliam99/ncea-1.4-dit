@@ -84,6 +84,11 @@ html {
   margin: 0.5rem;
 }
 
+#navBar img {
+  height: 10vh;
+  padding: 0.5vh;
+}
+
 .navbar-stick {
   background-color: var(--contrasting-color);
   position: fixed;
@@ -114,6 +119,15 @@ html {
   width: 100%;
   color: var(--text-color);
   text-decoration: none;
+  background-image: url("/hero-image.png");
+  background-position: center top;
+}
+
+#heroBanner h1 {
+  padding: 0.5rem;
+  border: 2px black solid;
+  border-radius: 0.2rem;
+  background-color: var(--contrasting-color);
 }
 
 /* HOME PAGE 
