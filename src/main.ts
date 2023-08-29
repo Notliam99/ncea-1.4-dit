@@ -8,16 +8,17 @@ import heroBanner from './html/hero-banner.html?raw'
 function HtmlDomConstruct(path: String) {
   // header content
   var navbar = navBar.replace("${viteLogo}", viteLogo)
-  var headerDOMEL = [ heroBanner, navbar ]
-  
+  var headerDOMEL = [navbar]
+
   // main content
   var mainDOMEL = []
-  if (path == "/") { 
-    mainDOMEL.push(homeMain) 
+  if (path == "/") {
+    headerDOMEL.splice(0, 0, heroBanner)
+    mainDOMEL.push(homeMain)
   } else if (path == "/about") {
     mainDOMEL.push("<h1>hello</h1>")
   }
-  
+
   // footer content
   var footerDOMEL = []
   footerDOMEL.push(footer)
@@ -29,17 +30,23 @@ function HtmlDomConstruct(path: String) {
   }
 }
 
-function navBarStick (navBar:HTMLDivElement) {
+function navBarStick(navBar: HTMLDivElement) {
   const scrollWatch = document.createElement('div')
-  
-  scrollWatch.setAttribute("data-scroll-watcher", "")
-  navBar.before(scrollWatch)
+  const spacer = document.createElement('div')
 
-  const navWatch = new IntersectionObserver (
+  scrollWatch.setAttribute("data-scroll-watcher", "")
+
+  spacer.setAttribute("data-scroll-space", "")
+  navBar.before(scrollWatch, spacer)
+
+
+  const navWatch = new IntersectionObserver(
     (entries) => {
       navBar.classList.toggle("navbar-stick", !entries[0].isIntersecting)
+      spacer.classList.toggle("mask-gap", !entries[0].isIntersecting)
     }
-  )
+  );
+
   navWatch.observe(scrollWatch)
 }
 
@@ -51,9 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector<HTMLDivElement>('header')!.innerHTML = htmlObject.header
   document.querySelector<HTMLDivElement>('main')!.innerHTML = htmlObject.main
   document.querySelector<HTMLDivElement>('footer')!.innerHTML = htmlObject.footer
-  
+
   var navBar = document.querySelector<HTMLDivElement>('#navBar')
-  if (navBar != null) { 
+  if (navBar != null) {
     navBarStick(navBar)
   }
 })
