@@ -85,8 +85,7 @@ html {
 }
 
 #navBar img {
-  height: 10vh;
-  padding: 0.5vh;
+  height: 9svh;
 }
 
 .navbar-stick {
@@ -132,12 +131,22 @@ html {
 
 /* HOME PAGE 
 * INTRO */
-#introduction {
-  padding: 1vw 10vw 1vw 10vw;
-  height:120vh;
-}
-
-#introduction h1 {
+main h1 {
+  margin: 1vw 10vw 0.1vw 10vw;
   color: var(--accent-color-1);
 }
 
+main p {
+  margin: 0vw 10vw 0.1vw 10vw;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 10vh;
+}
+
+footer li {
+  list-style: none;
+}

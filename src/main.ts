@@ -2,7 +2,8 @@ import './style.css'
 import meLogo from "./me.png"
 import navBar from './html/nav-all.html?raw'
 import footer from './html/footer-all.html?raw'
-import homeMain from './html/home-main.html?raw'
+import homeIntro from './html/home-main.html?raw'
+import homeProjects from './html/home-projects.html?raw'
 import heroBanner from './html/hero-banner.html?raw'
 
 function HtmlDomConstruct(path: String) {
@@ -14,7 +15,7 @@ function HtmlDomConstruct(path: String) {
   var mainDOMEL = []
   if (path == "/") {
     headerDOMEL.splice(0, 0, heroBanner)
-    mainDOMEL.push(homeMain)
+    mainDOMEL.push(homeIntro, homeProjects)
   } else if (path == "/about") {
     mainDOMEL.push("<h1>hello</h1>")
   }
