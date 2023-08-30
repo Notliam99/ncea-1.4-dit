@@ -131,22 +131,39 @@ html {
 
 /* HOME PAGE 
 * INTRO */
-main h1 {
+main h1, h2, h3, h4 {
   margin: 1vw 10vw 0.1vw 10vw;
   color: var(--accent-color-1);
 }
 
-main p {
-  margin: 0vw 10vw 0.1vw 10vw;
+main p, img {
+  margin: 0 10vw 0.2vw 10vw;
+}
+
+main img, .match-image {
+  border-radius: 1rem;
+  width: 40vw;
+  margin: 0 30vw 0.2vw 30vw;
 }
 
 footer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 10vh;
+  border-top: 0.2rem var(--contrasting-color) solid;
 }
 
 footer li {
   list-style: none;
+}
+
+footer section {
+  border: 0.2rem var(--contrasting-color) solid;
+  min-width: 10vw;
+  padding: 1vw;
+  margin: 0.5vw;
+}
+
+footer h4 {
+  margin: auto;
 }

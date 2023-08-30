@@ -1,0 +1,28 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ncea-14-nzdev-org-ingres
+  namespace: ncea-14
+  annotations:
+    kubernetes.io/ingress.class: traefik-external
+    link.argocd.argoproj.io/external-link: 'https://ncea-14.nzdev.org/'
+spec:
+  entryPoints:
+    - websecure
+
+  routes:
+    # - match: Host(`nzdev.org`)
+      # kind: Rule
+      # services:
+        # - name: nzdev-org-serve
+          # port: 80
+    
+    - match: Host(`ncea-14.nzdev.org`)
+      kind: Rule
+      services:
+        - name: nzdev-org-serve
+          port: 80
+
+  # tls:
+    # secretName: nzdev-org-production-tls

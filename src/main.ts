@@ -5,6 +5,8 @@ import footer from './html/footer-all.html?raw'
 import homeIntro from './html/home-main.html?raw'
 import homeProjects from './html/home-projects.html?raw'
 import heroBanner from './html/hero-banner.html?raw'
+import aboutMain from './html/about-main.html?raw'
+import contactMain from './html/contact-main.html?raw'
 
 function HtmlDomConstruct(path: String) {
   // header content
@@ -17,7 +19,9 @@ function HtmlDomConstruct(path: String) {
     headerDOMEL.splice(0, 0, heroBanner)
     mainDOMEL.push(homeIntro, homeProjects)
   } else if (path == "/about") {
-    mainDOMEL.push("<h1>hello</h1>")
+    mainDOMEL.push(aboutMain)
+  } else if (path == "/contact") {
+    mainDOMEL.push(contactMain)
   }
 
   // footer content

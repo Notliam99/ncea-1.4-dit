@@ -1,0 +1,30 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: ncea-14-nzdev-org-deploy
+  namespace: ncea-14
+  labels:
+    app: node
+spec:
+  replicas: 3
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: node
+  template:
+    metadata:
+      labels:
+        app: node
+    spec:
+      containers:
+      - name: node
+        image: asskit/ncea-nzdev-org:v0.1
+        ports:
+        - name: web
+          containerPort: 8080
+      # imagePullSecrets:
+      # - name: reg-cred 
