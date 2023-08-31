@@ -129,8 +129,7 @@ html {
   background-color: var(--contrasting-color);
 }
 
-/* HOME PAGE 
-* INTRO */
+/* MAIN */
 main h1, h2, h3, h4 {
   margin: 1vw 10vw 0.1vw 10vw;
   color: var(--accent-color-1);
@@ -143,7 +142,22 @@ main p, img {
 main img, .match-image {
   border-radius: 1rem;
   width: 40vw;
+  min-height: 40vh;
   margin: 0 30vw 0.2vw 30vw;
+}
+
+main #mapContainer {
+  width: 80vw;
+  aspect-ratio: 3/1;
+  margin: 0 10vw 0.2vw 10vw;
+  border-radius: 1rem;
+  border: 0.5rem var(--contrasting-color) solid;
+}
+
+main iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
 }
 
 footer {
