@@ -53,22 +53,22 @@ html {
 /* LINK THEME */
 /* unvisited link */
 a:link {
-  color: var(--accent-color-1);
+  color: var(--accent-color-4);
 }
 
 /* visited link */
 a:visited {
-  color: var(--accent-color-2);
+  color: var(--accent-color-3);
 }
 
 /* mouse over link */
 a:hover {
-  color: var(--accent-color-3);
+  color: var(--accent-color-2);
 }
 
 /* selected link */
 a:active {
-  color: var(--accent-color-4);
+  color: var(--accent-color-1);
 } 
 
 

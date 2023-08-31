@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: node
-        image: asskit/ncea-14:v0.2
+        image: asskit/ncea-14:v0.3
         ports:
         - name: web
           containerPort: 8080
