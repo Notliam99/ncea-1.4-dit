@@ -50,6 +50,28 @@ html {
   color: var(--text-color)
 }
 
+/* LINK THEME */
+/* unvisited link */
+a:link {
+  color: var(--accent-color-1);
+}
+
+/* visited link */
+a:visited {
+  color: var(--accent-color-2);
+}
+
+/* mouse over link */
+a:hover {
+  color: var(--accent-color-3);
+}
+
+/* selected link */
+a:active {
+  color: var(--accent-color-4);
+} 
+
+
 /* NAVBAR AND COPONETS */
 #navBar {
   height: 10svh;
@@ -139,11 +161,10 @@ main p, img {
   margin: 0 10vw 0.2vw 10vw;
 }
 
-main img, .match-image {
+main img {
   border-radius: 1rem;
-  width: 40vw;
-  min-height: 40vh;
-  margin: 0 30vw 0.2vw 30vw;
+  width: 80vw;
+  margin: 0 10vw 0.2vw 10vw;
 }
 
 main #mapContainer {
